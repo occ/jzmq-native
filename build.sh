@@ -54,7 +54,11 @@ jar uf zmq.jar -C ${TEMPJARDIR} .
 set -x
 if [ "${TRAVIS}" == "true" ]; then
   KEYFILE=$(mktemp)
-  echo $DEPLOY_KEY_{1..27} | base64 -D | gzip -d > $KEYFILE
+  BASE64_DECODE_PARAM="-d"
+  if [ "${BUILD_OS}" == "Darwin" ]; then
+    BASE64_DECODE_PARAM="-D"
+  fi
+  echo $DEPLOY_KEY_{1..27} | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
   `ssh-agent`
   ssh-add ${KEYFILE}
 
