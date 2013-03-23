@@ -22,3 +22,13 @@ CFLAGS=-fPIC LIBS=-lrt ./configure --with-zeromq=${LIBZMQPREFIX} --prefix=${JZMQ
 make
 make install
 popd
+
+# Build the jar
+TEMPJARDIR=$(mktemp -d)
+
+mkdir -p ${TEMPJARDIR}/NATIVE/amd64/Linux
+cp ${JZMQPREFIX}/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/amd64/Linux/libjzmq.so
+cp ${JZMQPREFIX}/share/java/zmq.jar .
+
+jar uf zmq.jar -C ${TEMPJARDIR} .
+rm -rf ${TEMPJARDIR}
