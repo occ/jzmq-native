@@ -2,6 +2,12 @@
 
 set -x
 
+BUILD_OS=`uname -s`
+BUILD_ARCH="x86"
+if [ `uname -m` == 'x64_64' ]; then
+  BUILD_ARCH="amd64"
+fi
+
 LIBZMQPREFIX=`pwd`/libzmq_install
 JZMQPREFIX=`pwd`/jzmq_install
 
@@ -25,9 +31,10 @@ popd
 
 # Build the jar
 TEMPJARDIR=$(mktemp -d)
+JZMQNATIVEDIR="${TEMPJARDIR}/NATIVE/${BUILD_ARCH}/${BUILD_OS}"
 
-mkdir -p ${TEMPJARDIR}/NATIVE/amd64/Linux
-cp ${JZMQPREFIX}/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/amd64/Linux/libjzmq.so
+mkdir -p ${JZMQNATIVEDIR}
+cp ${JZMQPREFIX}/lib/libjzmq.so ${JZMQNATIVEDIR}/libjzmq.so
 cp ${JZMQPREFIX}/share/java/zmq.jar .
 
 jar uf zmq.jar -C ${TEMPJARDIR} .
