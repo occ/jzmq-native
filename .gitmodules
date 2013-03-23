@@ -1,0 +1,3 @@
+[submodule "zeromq3-x"]
+	path = zeromq3-x
+	url = git://github.com/zeromq/zeromq3-x.git
