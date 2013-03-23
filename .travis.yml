@@ -1,4 +1,10 @@
 --- 
+branches: 
+  only: 
+  - master
+language: cpp
+compiler: 
+- gcc
 env: 
   matrix: 
   - BUILD_ARCH=x86
@@ -6,124 +12,102 @@ env:
   global: 
   - ARTIFACT_REPO=git@github.com:occ/jzmq-native-artifacts
   - secure: |-
-      cOYWI/hWaODGMRWnu+EgyF6Q6Wnl5xkpSjk1yLIsCsXy74H4eSz0jP9ErXYm
-      IKhkGrxE5payjP9N1VxiyTVQ1gs5ywLXzWN1XdHTz9syE6fN5StKtHD7LCzR
-      xA0/dAUVxqSEokDraw8Ej/msoM1Erwnjk+auOVMe3eWnwtB771o=
+      cgWJ7NauFYIvZqrmi4saQvmtCtU9fjeintTuL3SJzPGbIiYq3aDrCWVwxErk
+      kuOX79+Jy3bQYmtybZL7ExjXgxC52+uMmCK+GK28I6Abw8INmNkRAgu1MpmI
+      gbtFx52L49fObOFNHsHgLI+GGUXEeuSebPMS+ZqpcePhDd+ALAU=
   - secure: |-
-      QJKypOvD4n1whdo7CcfS6BlnUuy8pypS2uNTS0r2eIiEjtdDHBB5JHu0+Ego
-      G/xL//hREgYRfco0Cu7A1G54Ao+jqx0CCRdPsiuPEM795Aczzw/qFAprQJiE
-      xBL60cn2GCVlzk9zsaUGUeaApDDa2SrM2Bi0yAvLMTmLlHzt388=
+      iP+CEOCg35XnF+/x1PcFBwsTYfaBIDgegw/YQGKLTLGAs35yM3ITWz/gXLrw
+      OFJUZzZHz0qQAfKfEUPqVLRMCnFokOxzk6Z4savBidYOfj8ian4n4XMW5ScU
+      51dJhVsRtttIog9HUxKuj9T/33OmY9/kRQwqzkuRzwM0PYlQpfM=
   - secure: |-
-      BbZaw8YoPtTQyVOjOckdYMR/RhmbO+7T3TJshnT18pK+QlA74ZSFhKJ5BA0l
-      +nDlkMddc+r6IkCBjJh/DzvYv64ng5aFSFrunOec8Vm8EI9yRmjlsERM83yT
-      j6MzwwNqiOLyy021NsQ5/JU5UfMe+wbCIy13cgeAIKwiKEYrVEc=
+      hFz+b/bvKIp/btrzHMYxnwbWq0yj9Oztf7V41KF+TMJZUgfmOTRubPvHkvxO
+      XmUr8f1KXB6jyHNxIjYGa15lr/kOCAVAAAjQRCTt5wCqqWUQ0SsuhI4JkQ89
+      +2IDSfiU+PesUHaeAu3sDCHJPKaXlSKnbCzkCgu01rh2B7+7Zjg=
   - secure: |-
-      EfG0sui6TlkBhE3CsBlB/ujlWfyEoK6Y7KKFTiXOXyh/YTVNPi0qsSTtAird
-      /e1DGVBZFcMtgPBOmWPpuAk9yP6HfqDYqX/jI60zVN35QSZOHgOImpOpB/yu
-      33X2KdOSTeQVJbT2ZF/tZjKDHysMNC060qQSDuGW+jp8esNsfCc=
+      pMiYOGP3CywmVcPEJJYNiDrxzpZTbhIfQrp18ajH5FDatT0lBFvdy02KzynL
+      jApsX3Nb7sJ4HeiqetcszuDIn9l9jCnGYXkyxmrx4D/7rireDm1Oz95dv5+n
+      sTyZhhDf9oFEwJ5PRRk+2Qte0Sus6wL0v9sTIcOCHIWnWz+TAjI=
   - secure: |-
-      n6Uj1EgCuByWJ2bSPWApkNcoPjgbeJYnvGCtQgCuNrYDqQV0IPwPmuW+nmum
-      1EIzZFOg3TvoUcMM6f+AqIITVBNfNf5OqBO32+ewAwLzO+a7DdxheUr1HCwr
-      OvPyKTVvI644bZDoc0onQfcEWrGYWGXeB84TukTTyP9OHgZ5ON0=
+      hRAVODZe7uYXTbzrppXEIGIXWgq/M8YqBU5bR2ZQpAzLKWWZMAqkAwcqsi4d
+      MNhc9Di+BxG8W0YaK3lQjdDM0hHpc8kfJS13aTrq9PAL6u6iJ2ZUPQO3QFcg
+      LLN2gHcXuhNMczUepjtgvpIudgznTPZLYitOZtvUNT080n47DNM=
   - secure: |-
-      V3s1VVGWDFsemJPI8ymgihUADF+kBzSUcEd/gvFSrm//8gJGw2hCtL2WIddm
-      LgZ9h544l3Sj660cmAkQQV9yHoJpTBBeDF7tEuUQd3OE+01w/vtNl/RoQ736
-      LmcaOLXWwwbzgnEmA03JmphHsWOdJwME/4lMK15OTASsXvx3yO0=
+      FPz78DZKZYSF/eBVcYQIxDImqbTxSs2MfOiv7jv7mmpArE+UdDmq/afDrYQV
+      WGvOIwR+XWxRM8kTszqtjRz5yMDCHNsBIMPEM4xK7ILs4YRznl/H8WY6Mrsp
+      HKuxp5As6V6ccWOr8XjED3K131qkQU3wmJ/LNTlu7WSmdXjHJXQ=
   - secure: |-
-      UJuX9KZErlqHuQUMttu3u26koNy96UEqSZbcaLlFtCTUzQRCNdjoumcN5U8B
-      Dz58/fs7I6gvKEezjAv6YFJJHzluGu2rqgDFbkYDg6vKI9z0m7b59cKHUChB
-      HNpZlWJ3ZZPA6v7vGfy/QUL8yRkylwy6htcIHjqKMRYrEDFjBvU=
+      LuON1kylK82bAr/pDxkXzT5fzmIZIkMCECHofXjGDf3IoJkWC/yFYGEOvf1K
+      aVFY0VepTDtH6yf1vQF6UtQiRC8qkrRXl0Bxbj+ovAB/ozwmdcoVw+1RRzNA
+      oRJ9VsARp0/Tf33Cy/OLs173uPNeBzNjnLb21CFvRZk3lVasLVw=
   - secure: |-
-      kPxD61ZTfSDLhu6E2sl5tlQZmNe+hEzEO6xJTO9SM+cav428GwThEHcsJ7M7
-      mugKAQ6VlBMzku3pmWA407nz5ACoeKp91MdkFJdHKczPBjZl9DSDaq3U5Xv9
-      d3La6hbZfPRhDkHh/c+iyeS76356b3k+wEil//V2YRhrav8ka4A=
+      oIgjPD6PEOa4cOdKfYeoDohGzTq4rq1gA2I7lo6DTYUcg56UugANnb2mCtVh
+      BFK3+g1If5VC1+Ljq7o2OSvrAQmpUszjq0B/pt3xjtjvXitomTW2BqNpeCp5
+      ylj0O4EiDr8RMQnjYLD9O1EvABuQ/xnTtT+DFYQi4pJH/BtBX0o=
   - secure: |-
-      iLSrNwrl5i0LvS2t9Ur5KItlF6FLC1VhpsEhcT1IZTs+d9IKkvQlN1mHwmuU
-      BNam0Mo/T+mi2Vo6XGww/4j9loUc1CwAD3f1ZsPqCSMi3JIYIlsaA63WWe0Q
-      iSpypyvVnklbl5gzqFfN3mv1b7Chj1LWdTORwUeA718F8V9IPgU=
+      UytypFCaQ/trmlpi4zUM1a9C+pkMnE7lcELtdEkE6Fx8TpCEAnShjt9rfC4/
+      Mj4ImNWGcnPFHGvF+aKFk0jkKtPU01nw5kQB2SMGLXqlR1xmw+pr2S3WkXU8
+      IinQNBQHjWKAf6hCiOdt+ooKKYveqKKWwwvcbcNdSXuLL+a2dxU=
   - secure: |-
-      BD5VNlIe6vdmjCsd9c4DzHBU9N2E9JlyI4pg2+I3TYowrVlrw7Tp2XS6TYB3
-      yHzYITef1oSw+P7AYb4ZkCInYphGkLRFmbeCUdlapgmQ78MCGdeX87WZ+eV1
-      IacnfqJvhzBfE7aPlbGE61qACeYrt5/wcpnHaHK+Lnajv9NAa44=
+      m7mWlHWccyRJtFcYIp1s/1CiOrqzbbWtHid5eb/XL+Blunfh9ubQW3iHFVwv
+      d5mQUFRhCEi5FSVhWOqNnfRhqVZVsyCy32tsEEZEhbonEcGHCiMbaLTyq3n9
+      8jZyrYWl6hlH1gV6l9qDELGONqpqK+57F4dQ1p1aGWTeNr+JSbI=
   - secure: |-
-      OTyrfV901kucdOwyDVsivY2QOuhbJ5e88F+13luaXEMlouvF0s8DQ8Do8S3o
-      eZpKfMvOHobU9OUscKINcqTqJ2/mpgboWdtwXSG3cnSz2VC7sTUZb3QnxgQa
-      guo23koT7KHcNDo58tFc8NL7jgGj2kcqTrs3cabLxThj8q9aXnY=
+      Cl9COB3glB7rqH/BUSI/JUp7w3T74Dx3NqbxW1PkrdqjJ90+FJgqtGbtuewV
+      YSQNjveHNcEQedZudBbkuDLVJ+luh8E9nz0QmixVCDNRovM3P1BI0hpKmEyZ
+      5KX2FXtxTYIjlVr/7Kajh5vCzLWXKgeZGbwSRcmjJhwiMG2m1xo=
   - secure: |-
-      MlIYR5WkyqrvclTrsW279w/gJqZ+CEXxzBsaRMnokBS1H9Javh+KJ+EEZhmZ
-      GUROHUlsjf+FQl44a2vFoXKEIFiiMxzEE6hrhy9KyTfzeiZzF6nLRjhpB/AP
-      /LryGTbbxWhvqsfQ1/JU7/CXO6VKqeK8gNWhsjJfENZ4EVPo17M=
+      fU/a+6LjBpzKcq9oG89fwdnd+qQfGzA1nvuLkyyLGkqgadGfaDiR5lc9G7rj
+      nJwCehtbar9i5y9y2EZN7CNw5flaBxA/U5UxS84OoqtX1DoCp/OKfA1Hh+K3
+      UHK9UbhZTOa88I5oudOPcoNqjEENKnX1YrwY9K/0NznDix1W9K4=
   - secure: |-
-      WwvZzFdGDv41Yug6zVpZ1dRfBD1thByMcS+Mhj61eTsBT2DLbvO84SuL9/76
-      QEGmgMTRXaspM5izjYjkB0WGG27K2+cBdG6Kdidb7HtIisZNzw1dyArlxtpi
-      k4bc/shIvV/2BldwIrqZqFwmCjuWj97QXUrCjT0CKcbRGCyl76o=
+      gAO5qM8ZUrPHCn46k2wLlIz+zHc/MTHMVJ4n2I7HvOON+eK11wDhOWJsax+1
+      wzPl/nZ7KK8cPsjJr33oOqaCtYX6OLfWJ0mhgtLGbPCjlGgzSuGWahxN1IUf
+      VGwsgxTlMQKo0ER7f7m77GsHxKU/9FEhxdPMj5yA4Jm01WCBkWI=
   - secure: |-
-      XcrCWHSI5KG8TK/fQrsLj22R64BCmLpRywkiYbjuTxzhrSzscnMMiyiUR32f
-      roLE7SpmZrBkzjKEZA02jfSgFAThRCVfTaUA0pzmjqqIFXJu8AukV3o0I5Qi
-      9FcCSgPOJ1U9qoDCUdKbMkiZep00oAgedwbybH/VHDfZoCnuyg8=
+      pW8sMROLNV3mjHsknIWmnDEG7TMUoDL15H7x0XG9rHytRApowa0PhW6Btd1a
+      aPf6qIV72nnBjjpgYuzEtRPM+IgyJsE+dxSKPSpX5VRKMUg0WBsl72B+tDGL
+      xa7USMiJx9vh0nNNTm+C0NgqK2bdHvGTuTJ7pl65o45LrXEyoWw=
   - secure: |-
-      EjykhQhmEanOpO0QIbCWyYxMq5DIE70/gy3AA7sx+ya1ip/nOufqGiR/6INs
-      tefyxBS8+10FVEUp6TENyIRXZxPYQdj8stME2SOARfrTuuatEVWARq+7BQmx
-      PdngTUINUFblqWorjC5dOs0S/H2lbPOSRLwlkwnLds09bRTaymQ=
+      fxgnttc/eNuHCCkkw3I8zED84Hg0E0HM6QQshiBwEY6QoTqJlXgorPKjzekg
+      En93w26oX0Gob0QIJeFoXY0bLpLGPuqNoRDz7Wa0V2ikI8pwo/bGuWYjxcr0
+      a6kEdh2FwgnwovhwJxNv58e0dqHildzJzcfiYulNtvlcWX/4BO0=
   - secure: |-
-      HewUI8uIl38NCkV9a2FMe0S6aRdXipFV0VTaIeK/LbbXa9R73029TSgiuz/A
-      RB8emZFRcDdkivMfpOs42JaxP9ooTRuvDuu16HaAR/OjsPavWt29iJfzq64f
-      2JojtFBgx56DSFp+Wn+1djrdxmgLO+Q0QmZ/KZcPzqzLPBjIcTk=
+      WjoVTMv2e65LnFuJZ4HS6AD1ixcbX69nUkFHLGV4pb1g9bEoxyRzjMWVhRV7
+      /vEH8Ghl6o8zh/rl5PzSIlQ1idURiIBXjY37tw3VG+L+TqWDIqKaFoXmCldr
+      YRYoQfXnjwgM3ihYqGgaC0iAv9NJQt/Lg0tkM62rGgrGNsm/sNw=
   - secure: |-
-      NeO8hD/kiSEjfwmK9tN/fMgX/cn6t9EbSaE7GzyQsShN20iYJXQz3migKLtL
-      A8yuK886T0p0Bj7fO3Ppu8EIZjIEu0ed+0hJr1/F6jscqJbtNORlA9fLu7h4
-      uKTF2d77a/XMMK+YiDuLQzta7A+iyH2dtbn7IEGiX6dgbuFJK+0=
+      NXm/8yLIRHSWjlC84q4yLl9BwoHhiLrArkO7vXfInmj9Dq8f+7TGIyltI8No
+      3v5CANkJc2fxbJdHm+XQuIL0KlS+uXvYo4DLCLGdupd4RsmkUG8mLHHYuPwu
+      sRICE6kkw0H4qn4sLaeaV3gMrr61nCUQXeAU0CQ/+aYOXl/0WoU=
   - secure: |-
-      Nt0pSQjDDYEppA/UtvcuVv7lbnTNGah2ZM0YpKyP8M+G2LFiIBmgPPoEzEZQ
-      hTzQrBbAN0dtJ70cD5EnEzYdnYPHHjmDBgHo95hlAvFCLgAmUOKJcIo02kLU
-      PEV+zD11vPBSFwG2fs90pZKs8I2to8xMywRdcctdyKoc+a7VaCw=
+      OtcnL8nsUTWww8h328tqBkzPGUR36SdbL6yZi/pxR7OwbJfn3PW6IQ9Ou9Xz
+      S0swe64JLYophKfqtRJpaxX4dc6kj3CXUXUMCGnXyi4uGYjmf5PlIVFFo/zu
+      aL3EpC58epwQzdf56l0hF0xG2/AUAJCoRf7zZkuP6hQLFr1YwSA=
   - secure: |-
-      c+pA+wIva+yLYwGYs3ry6V/dJ3m3OPIKOAOaLUbIn9FdUxTD63tU0zZqLFlA
-      9kamZhCqSZO1roUHHTJixYbUOKc3yneaop2/JZKsak+oXJ6zeBsHKK6ijPHk
-      gUmNWZL5m+IZ4jPU4DhFX2WW6JH4wDL9zf6GvBYQ0aRNA9BCLJ4=
+      gowokY795DcSLD1GTHkYzRrZIfY853Cb471XWCJYXeewBxUqaX4/fnCpCPXC
+      adl/TBUGut3+MgMb9VlYPG7KjJM0AzMWLQE/ls4JHVBV3swAoh2FxUc/tB5G
+      5a6kx6Ka5kDSpyKjoja2Xpn9wWASTDTGc9nROC4gjergbXv3QbA=
   - secure: |-
-      n2Djxr+w2Om4O87owFRRYqIInIohW8EoHo2UYFONTJHBDGtn6KCISC0nNwhm
-      uzkxyMBtBRwK3eN2625/N2b4x0tUQ7OVE4SA1txWTv7nXNZccbscBMWyPW88
-      SK+p+zJPBPq8oz7LBumWjGvdSkk/i0LAyR6CulUurmnvj6q2mH4=
+      C5SJxbbzSVBe6ODbl54etcMgcUUBD1cuxerstX37kFqfsi3wH447aBw8Lw4/
+      2tzvjq70tZeaoRzsbQOqTrlSmEhEJ8U9xKmvz4MZ4aHoUEi/KROzNb48AfJB
+      WO5JfCfqJIIFnC1ME6xuZDctBrCTY/BgpXXcmxH62FUACpDicPI=
   - secure: |-
-      n7C+KfGXw4tvyD1Mm5doRNG+A7sD1Qcx/oCPdq+DlwhbdzVTUx6rr9xVBebP
-      J0b90M0cx91G9nzwrPHhSuupEJkFfZsUaxPrOldgiaXwsy9NBAC8b9v6M8PG
-      y8HtZu19WcmxLYhr0BkOYJ31TzQjybSBYeUXF+2cnsbK5pNDJh8=
+      bH44lLt3De0b3LCjPbPQ4byQNJq7Ad/vSPBxhi9EJiKdPaAMBfB2DEnwonPp
+      2QTlfFMRU2Z5hSURGsKc3bGJTi8f9ubv9eO0/BpfMNTVPXvYSAh17dRGpv6d
+      gLIUc4GZ95Sx86UzkEtPPUbJkgRhEcexv5FJyfIPYxas/Ewn1YU=
   - secure: |-
-      hnFu9sVt9kaRkXhTpclOwls0lq5lTyODgzSr5KqD2TtdktK+WVMsrwUIBcf1
-      wpJ2vmN70xVWUhMqpDYwF4Hgnwi/Q3jPiKOS5+LjoZ1riw8+DNcLyQmSHlE1
-      PZsfSmL47gA6Px+2Dw3t+9QBNjg1txlKNg5XY7/dLSQ0RsPFVdQ=
+      l/GBUsSb6Co9OfhWsIgi2O3V+bURskf9dVNAM6BdzFGP34L2pnWUUJoqAceF
+      QKch/bRZHmfQC5R3B6a8RduYV1E8f+kHe56LMhU++eVXyCYl/koZFmR23WJo
+      x2IGXT3tAb8LsI4ywqBtuk4J78NRFRRUzh1f52HuGt1Tpdgzf+k=
   - secure: |-
-      mRARe7U7MWjBMb5gWX1kgAoGryIix39iQSDHmh5Jjmkr5Jqkg2HtGLkpItH8
-      nB7jHEXiX7idNzrjLJjlF77am5G0I2D/MfJx/Ny+mHh9TC5ndcbNMGIkZ00N
-      6AyF+4KChgiSEcJTzSUNh9SPp1QU9XZd4PXt1y5OwyUxt6giLRs=
-  - secure: |-
-      EYzlzjlTNr8BpUEsiAzXHoAaSCQotLFNOj4iQ45/GZ10nxpi6Z4RyqMSO0an
-      qJu8eNjQp3jIAmDo48Vr74gn8sTv/8cgvgdZOHnOLyGiN/yH3BD2RepJqTOJ
-      PNEdbZH+RVtXgfsfLkMqSLNKigWBUp3XGJDZiZNXa71031EJi5w=
-  - secure: |-
-      Voza6Ssna/Rq8cwYfkvS8Lzsj4S/vguGksBU8NNVm1SWQ/lBhn1buc+By/WI
-      fc91AdAdE1dfHj1UbAg44QiFmb5LGqECF7yWk+Ddbi12IWhsnMBgwqEvMjl/
-      0lweS9aMIqCmmTrc1RKJb0PboNyUHTYJtF6mq6sZLfX0o3VKAiE=
-  - secure: |-
-      HdhW5iI6ls/4+Dk8+LCnATVCT1huBtY+vxRUjjGc/QKZsXz08pasG8wj2Gzu
-      ggTbpbRrqFSHrqcN/VGxQxOvvXQyfNjKdvpPlCy750OHGlNvLIPMUSW8J47E
-      eoY5rszTqjonMqiwAv1Eo7lImtpF/JXiYW5ZagEMYBaWE7hftWs=
-  - secure: |-
-      h7r+g0I+Vq6qoq/rcFf8pmSyaREjOJhYt5abAhGaaBtmBtUihyo+A8Az857S
-      6wCtljif3P9cnhRtedSI1S2tqNNn3ZxG9hGvcNfBpnA+gyfGx3dhDF4tsK7G
-      oAQGEpBfGgpyB/0yG4dHlvP4NJiSjoG1N3lU47fMH8IdrDdKjN8=
-script: 
-- ./build.sh
+      UuXaI2YY59yTsR7Z8z3CGbVxTH8IrfObA98Ut3PDgPHX2GydxV54jl7kOKhi
+      gVKmsejp5fRwHP3YQl46Kq2uTsB4FPwXG0lFBNPBz/i5iK+UOPE9bvdb0V4f
+      ny0aMXpStKbEZ7901gLoodDsJY+vf75RjMYRYZNuykBe26xsz+0=
 before_install: 
 - sudo apt-get install -qq libc6-dev-i386 gcc-multilib g++-multilib
-language: cpp
 notifications: 
   email: 
     on_success: change
     on_failure: always
-compiler: 
-- gcc
-branches: 
-  only: 
-  - master
+script: 
+- ./build.sh

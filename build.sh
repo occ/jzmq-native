@@ -54,10 +54,7 @@ jar uf zmq.jar -C ${TEMPJARDIR} .
 set -x
 if [ "${TRAVIS}" == "true" ]; then
   KEYFILE=$(mktemp)
-  for i in `seq 27`
-  do
-    echo $DEPLOY_KEY_{1..27} > $KEYFILE
-  done
+  echo $DEPLOY_KEY_{1..27} | base64 -D | gzip -d > $KEYFILE
   `ssh-agent`
   ssh-add ${KEYFILE}
 
