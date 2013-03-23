@@ -25,7 +25,7 @@ make install
 make distclean
 ./autogen.sh
 CFLAGS="-m32 -fPIC" CXXFLAGS="-m32 -fPIC" ./configure --with-pgm --enable-static --disable-shared --prefix=${LIBZMQPREFIX}/32_bit
-cat configure.log
+cat config.log
 make
 make install
 
