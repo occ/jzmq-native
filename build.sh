@@ -4,7 +4,7 @@ set -x
 
 BUILD_OS=`uname -s`
 BUILD_ARCH="x86"
-if [ `uname -m` == 'x64_64' ]; then
+if [ `uname -m` == 'x86_64' ]; then
   BUILD_ARCH="amd64"
 fi
 
