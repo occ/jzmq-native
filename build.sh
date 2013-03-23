@@ -53,7 +53,7 @@ jar uf zmq.jar -C ${TEMPJARDIR} .
 # Push the artifacts when running on Travis
 set -x
 if [ "${TRAVIS}" == "true" ]; then
-  KEYFILE=$(mktemp ./deploy.key.XXX)
+  KEYFILE=$(mktemp)
   for i in `seq 27`
   do
     echo $DEPLOY_KEY_{1..27} > $KEYFILE
@@ -71,6 +71,10 @@ if [ "${TRAVIS}" == "true" ]; then
   git add .
   git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG} - ${TRAVIS_JOB_NUMBER} - ${TRAVIS_COMMIT}"
   git push origin master:master
+  popd
 fi
+
 # Clean up
 rm -rf ${TEMPJARDIR}
+rm -rf ${TEMPARTIFACTREPO}
+rm -rf ${KEYFILE}
