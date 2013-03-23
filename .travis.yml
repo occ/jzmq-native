@@ -2,7 +2,7 @@ language: cpp
 compiler:
   - gcc
 before_install:
-  - sudo apt-get install -qq libc6-dev-i386
+  - sudo apt-get install -qq libc6-dev-i386 gcc-multilib g++-multilib
 script:
   - ./build.sh
 branches:
