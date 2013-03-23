@@ -3,48 +3,44 @@
 set -x
 
 BUILD_OS=`uname -s`
-BUILD_ARCH="x86"
-if [ `uname -m` != 'x86_64' ]; then
-  echo "Need a 64-bit build system"
-  exit 1
+if [ "${BUILD_ARCH}" == "" ]; then
+  BUILD_ARCH=`uname -m`
 fi
 
 LIBZMQPREFIX=`pwd`/libzmq_install
 JZMQPREFIX=`pwd`/jzmq_install
+JAVA_OS_ARCH=${BUILD_ARCH}
+
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LIBS="-lrt"
+
+if [ "${BUILD_ARCH}" == "x86" ]; then
+  export CFLAGS="${CFLAGS} -m32"
+  export CXXFLAGS="${CXXFLAGS} -m32"
+elif [ "${BUILD_ARCH}" == "x86_64" ]; then
+  JAVA_OS_ARCH="amd64"
+fi
+
+
 
 # Build statically linked libzmq with openpgm
-mkdir -p ${LIBZMQPREFIX}/32_bit
-mkdir -p ${LIBZMQPREFIX}/64_bit
+mkdir -p ${LIBZMQPREFIX}
 
 pushd zeromq3-x
 ./autogen.sh
-CFLAGS=-fPIC CXXFLAGS=-fPIC ./configure --with-pgm --enable-static --disable-shared --prefix=${LIBZMQPREFIX}/64_bit
+./configure --with-pgm --enable-static --disable-shared --prefix=${LIBZMQPREFIX}
 make
 make install
-
-make distclean
-./autogen.sh
-CFLAGS="-m32 -fPIC" CXXFLAGS="-m32 -fPIC" ./configure --with-pgm --enable-static --disable-shared --prefix=${LIBZMQPREFIX}/32_bit
-cat config.log
-make
-make install
-
 popd
 
 # Build jzmq
 
-mkdir -p ${JZMQPREFIX}/32_bit
-mkdir -p ${JZMQPREFIX}/64_bit
+mkdir -p ${JZMQPREFIX}
 
 pushd jzmq
 ./autogen.sh
-CFLAGS=-fPIC LIBS=-lrt ./configure --with-zeromq=${LIBZMQPREFIX} --prefix=${JZMQPREFIX}/64_bit
-make
-make install
-
-make distclean
-./autogen.sh
-CFLAGS="-m32 -fPIC" LIBS=-lrt ./configure --with-zeromq=${LIBZMQPREFIX} --prefix=${JZMQPREFIX}/32_bit
+./configure --with-zeromq=${LIBZMQPREFIX} --prefix=${JZMQPREFIX}
 make
 make install
 popd
@@ -52,11 +48,8 @@ popd
 # Build the jar
 TEMPJARDIR=$(mktemp -d)
 
-mkdir -p ${TEMPJARDIR}/NATIVE/x86/${BUILD_OS}/
-mkdir -p ${TEMPJARDIR}/NATIVE/amd64/${BUILD_OS}/
-
-cp ${JZMQPREFIX}/32_bit/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/x86/${BUILD_OS}/libjzmq.so
-cp ${JZMQPREFIX}/64_bit/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/amd64/${BUILD_OS}/libjzmq.so
+mkdir -p ${TEMPJARDIR}/NATIVE/${JAVA_OS_ARCH}/${BUILD_OS}/
+cp ${JZMQPREFIX}/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/${JAVA_OS_ARCH}/${BUILD_OS}/libjzmq.so
 cp ${JZMQPREFIX}/share/java/zmq.jar .
 
 jar uf zmq.jar -C ${TEMPJARDIR} .
