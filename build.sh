@@ -58,16 +58,17 @@ if [ "${TRAVIS}" == "true" ]; then
   do
     echo $DEPLOY_KEY_{1..27} > $KEYFILE
   done
+  `ssh-agent`
+  ssh-add ${KEYFILE}
 
   TEMPARTIFACTREPO=$(mktemp -d)
   pushd ${TEMPARTIFACTREPO}
   git init
   git remote add origin git@github.com:occ/jzmq-native-artifacts.git
-  git config --local ssh.key ${KEYFILE}
   git config --local user.email "travis@travis-ci.org"
   git config --local user.name "Travis CI"
   git pull origin master
-  cp -rf ${TEMPJARDIR} .
+  cp -rf ${TEMPJARDIR}/* .
   git add .
   git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG} - ${TRAVIS_JOB_NUMBER} - ${TRAVIS_COMMIT}"
   git push origin master:master
