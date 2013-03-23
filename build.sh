@@ -53,7 +53,7 @@ cp ${JZMQPREFIX}/share/java/zmq.jar .
 jar uf zmq.jar -C ${TEMPJARDIR} .
 
 # Push the artifacts when running on Travis
-if [ "${TRAVIS}" == "true" ]; do
+if [ "${TRAVIS}" == "true" ]; then
   KEYFILE=$(mktemp ./deploy.key.XXX)
   for i in `seq 27`
   do
