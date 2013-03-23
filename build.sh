@@ -23,7 +23,6 @@ elif [ "${BUILD_ARCH}" == "x86_64" ]; then
 fi
 
 
-
 # Build statically linked libzmq with openpgm
 mkdir -p ${LIBZMQPREFIX}
 
@@ -35,7 +34,6 @@ make install
 popd
 
 # Build jzmq
-
 mkdir -p ${JZMQPREFIX}
 
 pushd jzmq
@@ -53,4 +51,25 @@ cp ${JZMQPREFIX}/lib/libjzmq.so ${TEMPJARDIR}/NATIVE/${JAVA_OS_ARCH}/${BUILD_OS}
 cp ${JZMQPREFIX}/share/java/zmq.jar .
 
 jar uf zmq.jar -C ${TEMPJARDIR} .
+
+# Push the artifacts when running on Travis
+if [ "${TRAVIS}" == "true" ]; do
+  KEYFILE=$(mktemp ./deploy.key.XXX)
+  for i in `seq 27`
+  do
+    echo $DEPLOY_KEY_{1..27} > $KEYFILE
+  done
+
+  TEMPARTIFACTREPO=$(mktemp -d)
+  pushd ${TEMPARTIFACTREPO}
+  git init
+  git remote add origin git@github.com:occ/jzmq-native-artifacts.git
+  git config --local ssh.key ${KEYFILE}
+  git pull origin master
+  cp -rf ${TEMPJARDIR} .
+  git add .
+  git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG} - ${TRAVIS_JOB_NUMBER} - ${TRAVIS_COMMIT}"
+  git push origin master:master
+fi
+# Clean up
 rm -rf ${TEMPJARDIR}

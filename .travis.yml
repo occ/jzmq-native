@@ -1,18 +1,129 @@
+--- 
+env: 
+  matrix: 
+  - BUILD_ARCH=x86
+  - BUILD_ARCH=x86_64
+  global: 
+  - ARTIFACT_REPO=git@github.com:occ/jzmq-native-artifacts
+  - secure: |-
+      cOYWI/hWaODGMRWnu+EgyF6Q6Wnl5xkpSjk1yLIsCsXy74H4eSz0jP9ErXYm
+      IKhkGrxE5payjP9N1VxiyTVQ1gs5ywLXzWN1XdHTz9syE6fN5StKtHD7LCzR
+      xA0/dAUVxqSEokDraw8Ej/msoM1Erwnjk+auOVMe3eWnwtB771o=
+  - secure: |-
+      QJKypOvD4n1whdo7CcfS6BlnUuy8pypS2uNTS0r2eIiEjtdDHBB5JHu0+Ego
+      G/xL//hREgYRfco0Cu7A1G54Ao+jqx0CCRdPsiuPEM795Aczzw/qFAprQJiE
+      xBL60cn2GCVlzk9zsaUGUeaApDDa2SrM2Bi0yAvLMTmLlHzt388=
+  - secure: |-
+      BbZaw8YoPtTQyVOjOckdYMR/RhmbO+7T3TJshnT18pK+QlA74ZSFhKJ5BA0l
+      +nDlkMddc+r6IkCBjJh/DzvYv64ng5aFSFrunOec8Vm8EI9yRmjlsERM83yT
+      j6MzwwNqiOLyy021NsQ5/JU5UfMe+wbCIy13cgeAIKwiKEYrVEc=
+  - secure: |-
+      EfG0sui6TlkBhE3CsBlB/ujlWfyEoK6Y7KKFTiXOXyh/YTVNPi0qsSTtAird
+      /e1DGVBZFcMtgPBOmWPpuAk9yP6HfqDYqX/jI60zVN35QSZOHgOImpOpB/yu
+      33X2KdOSTeQVJbT2ZF/tZjKDHysMNC060qQSDuGW+jp8esNsfCc=
+  - secure: |-
+      n6Uj1EgCuByWJ2bSPWApkNcoPjgbeJYnvGCtQgCuNrYDqQV0IPwPmuW+nmum
+      1EIzZFOg3TvoUcMM6f+AqIITVBNfNf5OqBO32+ewAwLzO+a7DdxheUr1HCwr
+      OvPyKTVvI644bZDoc0onQfcEWrGYWGXeB84TukTTyP9OHgZ5ON0=
+  - secure: |-
+      V3s1VVGWDFsemJPI8ymgihUADF+kBzSUcEd/gvFSrm//8gJGw2hCtL2WIddm
+      LgZ9h544l3Sj660cmAkQQV9yHoJpTBBeDF7tEuUQd3OE+01w/vtNl/RoQ736
+      LmcaOLXWwwbzgnEmA03JmphHsWOdJwME/4lMK15OTASsXvx3yO0=
+  - secure: |-
+      UJuX9KZErlqHuQUMttu3u26koNy96UEqSZbcaLlFtCTUzQRCNdjoumcN5U8B
+      Dz58/fs7I6gvKEezjAv6YFJJHzluGu2rqgDFbkYDg6vKI9z0m7b59cKHUChB
+      HNpZlWJ3ZZPA6v7vGfy/QUL8yRkylwy6htcIHjqKMRYrEDFjBvU=
+  - secure: |-
+      kPxD61ZTfSDLhu6E2sl5tlQZmNe+hEzEO6xJTO9SM+cav428GwThEHcsJ7M7
+      mugKAQ6VlBMzku3pmWA407nz5ACoeKp91MdkFJdHKczPBjZl9DSDaq3U5Xv9
+      d3La6hbZfPRhDkHh/c+iyeS76356b3k+wEil//V2YRhrav8ka4A=
+  - secure: |-
+      iLSrNwrl5i0LvS2t9Ur5KItlF6FLC1VhpsEhcT1IZTs+d9IKkvQlN1mHwmuU
+      BNam0Mo/T+mi2Vo6XGww/4j9loUc1CwAD3f1ZsPqCSMi3JIYIlsaA63WWe0Q
+      iSpypyvVnklbl5gzqFfN3mv1b7Chj1LWdTORwUeA718F8V9IPgU=
+  - secure: |-
+      BD5VNlIe6vdmjCsd9c4DzHBU9N2E9JlyI4pg2+I3TYowrVlrw7Tp2XS6TYB3
+      yHzYITef1oSw+P7AYb4ZkCInYphGkLRFmbeCUdlapgmQ78MCGdeX87WZ+eV1
+      IacnfqJvhzBfE7aPlbGE61qACeYrt5/wcpnHaHK+Lnajv9NAa44=
+  - secure: |-
+      OTyrfV901kucdOwyDVsivY2QOuhbJ5e88F+13luaXEMlouvF0s8DQ8Do8S3o
+      eZpKfMvOHobU9OUscKINcqTqJ2/mpgboWdtwXSG3cnSz2VC7sTUZb3QnxgQa
+      guo23koT7KHcNDo58tFc8NL7jgGj2kcqTrs3cabLxThj8q9aXnY=
+  - secure: |-
+      MlIYR5WkyqrvclTrsW279w/gJqZ+CEXxzBsaRMnokBS1H9Javh+KJ+EEZhmZ
+      GUROHUlsjf+FQl44a2vFoXKEIFiiMxzEE6hrhy9KyTfzeiZzF6nLRjhpB/AP
+      /LryGTbbxWhvqsfQ1/JU7/CXO6VKqeK8gNWhsjJfENZ4EVPo17M=
+  - secure: |-
+      WwvZzFdGDv41Yug6zVpZ1dRfBD1thByMcS+Mhj61eTsBT2DLbvO84SuL9/76
+      QEGmgMTRXaspM5izjYjkB0WGG27K2+cBdG6Kdidb7HtIisZNzw1dyArlxtpi
+      k4bc/shIvV/2BldwIrqZqFwmCjuWj97QXUrCjT0CKcbRGCyl76o=
+  - secure: |-
+      XcrCWHSI5KG8TK/fQrsLj22R64BCmLpRywkiYbjuTxzhrSzscnMMiyiUR32f
+      roLE7SpmZrBkzjKEZA02jfSgFAThRCVfTaUA0pzmjqqIFXJu8AukV3o0I5Qi
+      9FcCSgPOJ1U9qoDCUdKbMkiZep00oAgedwbybH/VHDfZoCnuyg8=
+  - secure: |-
+      EjykhQhmEanOpO0QIbCWyYxMq5DIE70/gy3AA7sx+ya1ip/nOufqGiR/6INs
+      tefyxBS8+10FVEUp6TENyIRXZxPYQdj8stME2SOARfrTuuatEVWARq+7BQmx
+      PdngTUINUFblqWorjC5dOs0S/H2lbPOSRLwlkwnLds09bRTaymQ=
+  - secure: |-
+      HewUI8uIl38NCkV9a2FMe0S6aRdXipFV0VTaIeK/LbbXa9R73029TSgiuz/A
+      RB8emZFRcDdkivMfpOs42JaxP9ooTRuvDuu16HaAR/OjsPavWt29iJfzq64f
+      2JojtFBgx56DSFp+Wn+1djrdxmgLO+Q0QmZ/KZcPzqzLPBjIcTk=
+  - secure: |-
+      NeO8hD/kiSEjfwmK9tN/fMgX/cn6t9EbSaE7GzyQsShN20iYJXQz3migKLtL
+      A8yuK886T0p0Bj7fO3Ppu8EIZjIEu0ed+0hJr1/F6jscqJbtNORlA9fLu7h4
+      uKTF2d77a/XMMK+YiDuLQzta7A+iyH2dtbn7IEGiX6dgbuFJK+0=
+  - secure: |-
+      Nt0pSQjDDYEppA/UtvcuVv7lbnTNGah2ZM0YpKyP8M+G2LFiIBmgPPoEzEZQ
+      hTzQrBbAN0dtJ70cD5EnEzYdnYPHHjmDBgHo95hlAvFCLgAmUOKJcIo02kLU
+      PEV+zD11vPBSFwG2fs90pZKs8I2to8xMywRdcctdyKoc+a7VaCw=
+  - secure: |-
+      c+pA+wIva+yLYwGYs3ry6V/dJ3m3OPIKOAOaLUbIn9FdUxTD63tU0zZqLFlA
+      9kamZhCqSZO1roUHHTJixYbUOKc3yneaop2/JZKsak+oXJ6zeBsHKK6ijPHk
+      gUmNWZL5m+IZ4jPU4DhFX2WW6JH4wDL9zf6GvBYQ0aRNA9BCLJ4=
+  - secure: |-
+      n2Djxr+w2Om4O87owFRRYqIInIohW8EoHo2UYFONTJHBDGtn6KCISC0nNwhm
+      uzkxyMBtBRwK3eN2625/N2b4x0tUQ7OVE4SA1txWTv7nXNZccbscBMWyPW88
+      SK+p+zJPBPq8oz7LBumWjGvdSkk/i0LAyR6CulUurmnvj6q2mH4=
+  - secure: |-
+      n7C+KfGXw4tvyD1Mm5doRNG+A7sD1Qcx/oCPdq+DlwhbdzVTUx6rr9xVBebP
+      J0b90M0cx91G9nzwrPHhSuupEJkFfZsUaxPrOldgiaXwsy9NBAC8b9v6M8PG
+      y8HtZu19WcmxLYhr0BkOYJ31TzQjybSBYeUXF+2cnsbK5pNDJh8=
+  - secure: |-
+      hnFu9sVt9kaRkXhTpclOwls0lq5lTyODgzSr5KqD2TtdktK+WVMsrwUIBcf1
+      wpJ2vmN70xVWUhMqpDYwF4Hgnwi/Q3jPiKOS5+LjoZ1riw8+DNcLyQmSHlE1
+      PZsfSmL47gA6Px+2Dw3t+9QBNjg1txlKNg5XY7/dLSQ0RsPFVdQ=
+  - secure: |-
+      mRARe7U7MWjBMb5gWX1kgAoGryIix39iQSDHmh5Jjmkr5Jqkg2HtGLkpItH8
+      nB7jHEXiX7idNzrjLJjlF77am5G0I2D/MfJx/Ny+mHh9TC5ndcbNMGIkZ00N
+      6AyF+4KChgiSEcJTzSUNh9SPp1QU9XZd4PXt1y5OwyUxt6giLRs=
+  - secure: |-
+      EYzlzjlTNr8BpUEsiAzXHoAaSCQotLFNOj4iQ45/GZ10nxpi6Z4RyqMSO0an
+      qJu8eNjQp3jIAmDo48Vr74gn8sTv/8cgvgdZOHnOLyGiN/yH3BD2RepJqTOJ
+      PNEdbZH+RVtXgfsfLkMqSLNKigWBUp3XGJDZiZNXa71031EJi5w=
+  - secure: |-
+      Voza6Ssna/Rq8cwYfkvS8Lzsj4S/vguGksBU8NNVm1SWQ/lBhn1buc+By/WI
+      fc91AdAdE1dfHj1UbAg44QiFmb5LGqECF7yWk+Ddbi12IWhsnMBgwqEvMjl/
+      0lweS9aMIqCmmTrc1RKJb0PboNyUHTYJtF6mq6sZLfX0o3VKAiE=
+  - secure: |-
+      HdhW5iI6ls/4+Dk8+LCnATVCT1huBtY+vxRUjjGc/QKZsXz08pasG8wj2Gzu
+      ggTbpbRrqFSHrqcN/VGxQxOvvXQyfNjKdvpPlCy750OHGlNvLIPMUSW8J47E
+      eoY5rszTqjonMqiwAv1Eo7lImtpF/JXiYW5ZagEMYBaWE7hftWs=
+  - secure: |-
+      h7r+g0I+Vq6qoq/rcFf8pmSyaREjOJhYt5abAhGaaBtmBtUihyo+A8Az857S
+      6wCtljif3P9cnhRtedSI1S2tqNNn3ZxG9hGvcNfBpnA+gyfGx3dhDF4tsK7G
+      oAQGEpBfGgpyB/0yG4dHlvP4NJiSjoG1N3lU47fMH8IdrDdKjN8=
+script: 
+- ./build.sh
+before_install: 
+- sudo apt-get install -qq libc6-dev-i386 gcc-multilib g++-multilib
 language: cpp
-compiler:
-  - gcc
-env:
-  matrix:
-    - BUILD_ARCH=x86
-    - BUILD_ARCH=x86_64
-before_install:
-  - sudo apt-get install -qq libc6-dev-i386 gcc-multilib g++-multilib
-script:
-  - ./build.sh
-branches:
-  only:
-    - master
-notifications:
-  email:
+notifications: 
+  email: 
     on_success: change
     on_failure: always
+compiler: 
+- gcc
+branches: 
+  only: 
+  - master
