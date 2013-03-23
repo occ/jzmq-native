@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 BUILD_OS=`uname -s`
 if [ "${BUILD_ARCH}" == "" ]; then
   BUILD_ARCH=`uname -m`
@@ -65,6 +63,8 @@ if [ "${TRAVIS}" == "true" ]; then
   git init
   git remote add origin git@github.com:occ/jzmq-native-artifacts.git
   git config --local ssh.key ${KEYFILE}
+  git config --local user.email "travis@travis-ci.org"
+  git config --local user.name "Travis CI"
   git pull origin master
   cp -rf ${TEMPJARDIR} .
   git add .
