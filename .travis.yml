@@ -1,6 +1,8 @@
 language: cpp
 compiler:
   - gcc
+before_install:
+  - sudo apt-get install -qq libc6-dev-i386
 script:
   - ./build.sh
 branches:
