@@ -58,7 +58,7 @@ if [ "${TRAVIS}" == "true" ]; then
   if [ "${BUILD_OS}" == "Darwin" ]; then
     BASE64_DECODE_PARAM="-D"
   fi
-  echo $DEPLOY_KEY_{1..27} | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
+  echo "$DEPLOY_KEY_{1..27}" | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
   `ssh-agent`
   ssh-add ${KEYFILE}
 
@@ -66,7 +66,7 @@ if [ "${TRAVIS}" == "true" ]; then
   pushd ${TEMPARTIFACTREPO}
   git init
   git remote add origin git@github.com:occ/jzmq-native-artifacts.git
-  git config --local user.email "travis@travis-ci.org"
+  git config --local user.email "travis@occ.me"
   git config --local user.name "Travis CI"
   git pull origin master
   cp -rf ${TEMPJARDIR}/* .
@@ -74,6 +74,8 @@ if [ "${TRAVIS}" == "true" ]; then
   git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG} - ${TRAVIS_JOB_NUMBER} - ${TRAVIS_COMMIT}"
   git push origin master:master
   popd
+
+  kill -9 ${SSH_AGENT_PID}
 fi
 
 # Clean up
