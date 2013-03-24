@@ -63,7 +63,7 @@ if [ "${TRAVIS}" == "true" ]; then
   ssh-agent > $SSH_AGENT_SETUP
   source $SSH_AGENT_SETUP
   rm $SSH_AGENT_SETUP
-  ssh-add KEYFILE
+  ssh-add $KEYFILE
 
   TEMPARTIFACTREPO=$(mktemp -d)
   pushd ${TEMPARTIFACTREPO}
