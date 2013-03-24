@@ -59,8 +59,11 @@ if [ "${TRAVIS}" == "true" ]; then
     BASE64_DECODE_PARAM="-D"
   fi
   echo $DEPLOY_KEY_{1..27} | sed 's/ //g' | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
-  `ssh-agent`
-  ssh-add ${KEYFILE}
+  SSH_AGENT_SETUP=$(mktemp)  
+  ssh-agent > $SSH_AGENT_SETUP
+  source $SSH_AGENT_SETUP
+  rm $SSH_AGENT_SETUP
+  ssh-add KEYFILE
 
   TEMPARTIFACTREPO=$(mktemp -d)
   pushd ${TEMPARTIFACTREPO}
