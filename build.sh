@@ -58,7 +58,7 @@ if [ "${TRAVIS}" == "true" ]; then
   if [ "${BUILD_OS}" == "Darwin" ]; then
     BASE64_DECODE_PARAM="-D"
   fi
-  echo "$DEPLOY_KEY_{1..27}" | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
+  echo $DEPLOY_KEY_{1..27} | base64 ${BASE64_DECODE_PARAM} | gzip --decompress > $KEYFILE
   `ssh-agent`
   ssh-add ${KEYFILE}
 
