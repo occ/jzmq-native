@@ -73,7 +73,7 @@ if [ "${TRAVIS}" == "true" ]; then
   git pull origin master
   cp -rf ${TEMPJARDIR}/* .
   git add .
-  git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG} - ${TRAVIS_JOB_NUMBER} - ${TRAVIS_COMMIT}"
+  git commit -m "Artifacts from Travis. ${TRAVIS_REPO_SLUG}@${TRAVIS_COMMIT}"
   git push origin master:master
   popd
 
